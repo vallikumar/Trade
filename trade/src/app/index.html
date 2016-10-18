@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="TradeApp">
+<head>
+	<title>Trades</title>
+	<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/custom.css" />
+</head>
+<body>
+	<div class="container" ng-controller="TradeController as trade">
+		<div class="page-header">
+        	<h3>Trade Details</h3>
+      </div>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<thead class="table-head-font">
+					<th class="text-center">Group</th>
+					<th>Txn Id</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Market Value</th>
+					<th class="text-center">P/L</th>
+				</thead>
+				<tbody ng-repeat="(symbol, trades) in tradeGroup">
+					<tr>
+						<td colspan="5" align="center" class="table-symbol-font">{{ symbol }}</td>
+						<td align="center">
+							<button type="button" class="btn btn-primary btn-sm" ng-disabled="sellPlDisplay['pl'+symbol]" ng-click="calculatePl(trades.Buy, trades.Sell, symbol)">Calculate P/L</button>
+						</td>
+					</tr>
+					<tr ng-repeat="trade in trades.Buy | orderBy: 'TxnId'">
+						<td align="center" class="success"><strong>Buy</strong></td>
+						<td>{{ trade.TxnId }}</td>
+						<td>{{ trade.Quantity }}</td>
+						<td>{{ trade.Price }}</td>
+						<td>{{ trade.MarketValue }}</td>
+						<td></td>
+					</tr>
+					<tr ng-repeat="trade in trades.Sell | orderBy: 'TxnId'">
+						<td align="center" class="table-td-pl"><strong>Sell</strong></td>
+						<td>{{ trade.TxnId }}</td>
+						<td>{{ trade.Quantity }}</td>
+						<td>{{ trade.Price }}</td>
+						<td>{{ trade.MarketValue }}</td>
+						<td ng-class="{'table-td-pl': sellPlDisplay['pl'+symbol]}" align="center"><strong>{{ sellPlDisplay[symbol][$index] }}</strong></td>
+					</tr>
+				</tbody>
+				<tfoot class="table-head-font">
+					<tr>
+						<td colspan="5" align="right"><strong>Total</strong></td>
+						<td align="center"><span ng-show="totalPlDisplay"><strong>{{ totalPl }}</strong></span></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="../src/app/app-service.js"></script>
+	<script type="text/javascript" src="../src/app/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+{
+"trades":
+[
+{"TxnId":1 , "Symbol":"Pineapple" , "Action":"Buy" , "Quantity":10, "Price":5 , "MarketValue":50} ,
+{"TxnId":2 , "Symbol":"Mango" , "Action":"Buy" , "Quantity":9, "Price":4 , "MarketValue":36} ,
+{"TxnId":3 , "Symbol":"Pineapple" , "Action":"Buy" , "Quantity":20, "Price":5.1 , "MarketValue":102} ,
+{"TxnId":4 , "Symbol":"Pineapple" , "Action":"Sell" , "Quantity":15, "Price":5.2 , "MarketValue":-78} ,
+{"TxnId":5 , "Symbol":"Mango" , "Action":"Buy" , "Quantity":9, "Price":4.1 , "MarketValue":36.9} ,
+{"TxnId":6 , "Symbol":"Mango" , "Action":"Sell" , "Quantity":7, "Price":4.3 , "MarketValue":-30.1} ,
+{"TxnId":7 , "Symbol":"Banana" , "Action":"Buy" , "Quantity":10, "Price":1.5 , "MarketValue":15} ,
+{"TxnId":8 , "Symbol":"Mango" , "Action":"Buy" , "Quantity":2, "Price":4.3 , "MarketValue":8.6} ,
+{"TxnId":9 , "Symbol":"Pineapple" , "Action":"Buy" , "Quantity":10, "Price":5.3 , "MarketValue":53} ,
+{"TxnId":10 , "Symbol":"Pineapple" , "Action":"Sell" , "Quantity":5, "Price":5.4 , "MarketValue":-27} ,
+{"TxnId":11 , "Symbol":"Mango" , "Action":"Sell" , "Quantity":12, "Price":4.4 , "MarketValue":-52.8} ,
+{"TxnId":12 , "Symbol":"Banana" , "Action":"Sell" , "Quantity":3, "Price":1.2 , "MarketValue":-3.6} ,
+{"TxnId":13 , "Symbol":"Pineapple" , "Action":"Sell" , "Quantity":20, "Price":5.5 , "MarketValue":-110}
+]
+}
